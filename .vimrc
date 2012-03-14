@@ -30,3 +30,11 @@ set number                     "Display line number
 ""Set up the status line
 set ls=2                        "Always show status line
 set statusline=%l,%c\ -\ #%n/%N
+
+"" Window Resizing
+
+map <F5> :res 300 <CR>
+map <F6> :vertical res 300 <CR>
+
+"" PHP Lint
+map <F3> :!php -l % <CR>
