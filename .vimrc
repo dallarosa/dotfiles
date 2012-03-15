@@ -38,3 +38,9 @@ map <F6> :vertical res 300 <CR>
 
 "" PHP Lint
 map <F3> :!php -l % <CR>
+
+"" Commenting/Uncommenting
+
+map <C-D> :s/^/\/\//g <CR>
+map <C-U> :s/\/\///g <CR>
+
