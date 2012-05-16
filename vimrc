@@ -1,9 +1,12 @@
 set nocompatible
 
+"" Call Pathogen
+call pathogen#infect()
+
 "" Encoding
 set fencs=euc-jp,iso-2022-jp,cp932,utf-8,default,latin1 
-set fenc=utf-8
-
+set fenc=utf8
+set fileencoding=utf8
 set showcmd                     " display incomplete commands
 
 "" Whitespace
@@ -12,6 +15,7 @@ set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces
 set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
+map <F4> :%s/\s\+$  <CR>
 
 ""Syntax & Identation
 
@@ -41,12 +45,15 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%0
 
 map <F5> :res 300 <CR>
 map <F6> :vertical res 300 <CR>
+map <F7> :vertical res 150 <CR>
+
+nmap t% :tabedit %<CR>
+nmap td :tabclose<CR>
 
 "" PHP Lint
 map <F3> :!php -l % <CR>
 
 "" Commenting/Uncommenting
 
-map <C-D> :s/^/\/\//g <CR>
-map <C-U> :s/\/\///g <CR>
-
+map <C-D> :s/^/\/\//g <CR> :nohlsearch<Bar>:echo<CR> "Adds C-like comments
+map <C-U> :s/\/\///g <CR> :nohlsearch<Bar>:echo<CR>  "Removes C-like comments
