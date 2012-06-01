@@ -4,9 +4,8 @@ set nocompatible
 call pathogen#infect()
 
 "" Encoding
-set fencs=euc-jp,iso-2022-jp,cp932,utf-8,default,latin1 
+set fencs=utf-8,euc-jp,iso-2022-jp,cp932,default,latin1 
 set fenc=utf8
-set fileencoding=utf8
 set showcmd                     " display incomplete commands
 
 "" Whitespace
