@@ -4,17 +4,20 @@ set nocompatible
 call pathogen#infect()
 
 "" Encoding
-set fencs=utf-8,euc-jp,iso-2022-jp,cp932,default,latin1 
 set fenc=utf8
+set fencs=utf8,euc-jp,iso-2022-jp,cp932,default,latin1 
 set showcmd                     " display incomplete commands
 
 "" Whitespace
 
 set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces
-set expandtab                   " use spaces, not tabs
+set tabstop=2 shiftwidth=2 softtabstop=2 " a tab is two spaces
+set noexpandtab 
+"set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
 map <F4> :%s/\s\+$  <CR>
+set listchars=eol:$,tab:__,trail:~,extends:>,precedes:<
+set list
 
 ""Syntax & Identation
 
@@ -22,7 +25,7 @@ syntax enable
 filetype plugin indent on 
 set smartindent
 set autoindent
-set cinkeys=0{,0},:,0#,!,!^F
+"set cinkeys=0{,0},:,0#,!,!^F
 
 
 "" Searching
@@ -57,3 +60,8 @@ map <F3> :!php -l % <CR>
 
 map <C-D> :s/^/\/\//g <CR> :nohlsearch<Bar>:echo<CR>              " Adds C-like comments
 map <C-U> :s/\/\///g <CR> :nohlsearch<Bar>:echo<CR>               " Removes C-like comments
+
+"" taglist settings
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
