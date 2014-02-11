@@ -1,0 +1,13 @@
+[user]
+	email = dallarosa@gmail.com
+	name = Francisco Dalla Rosa Soares
+[core]
+  editor = vim
+[help]
+  autocorrect = 1
+[color]
+  ui = true
+[merge]
+  tool = vimdiff
+[diff]
+  external = "vimdiff"
